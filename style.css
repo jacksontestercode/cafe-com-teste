@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2b1b12 0%, #3d2a1f 100%);
+    color: #f4f3ee;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* === TELA DE LOGIN === */
+#login-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-card {
+    background: #fefae0;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.login-header h1 {
+    color: #8b5a2b;
+    font-size: 2.2em;
+    margin-bottom: 8px;
+}
+
+.login-header h1 .icon {
+    font-size: 1.4em;
+    animation: steam 2.5s infinite;
+}
+
+.login-header p {
+    color: #a0522d;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b5a2b;
+    font-size: 1.1em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #d4a373;
+    border-radius: 12px;
+    background: #fff8f0;
+    font-size: 1em;
+    color: #5d4037;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #8b5a2b;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(139, 90, 43, 0.15);
+}
+
+.login-btn {
+    background: #8b5a2b;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(139, 90, 43, 0.3);
+}
+
+.login-btn:hover {
+    background: #a57040;
+    transform: translateY(-2px);
+}
+
+.login-footer {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #a0522d;
+}
+
+.login-footer p {
+    margin: 6px 0;
+}
+
+/* === MENSAGEM DE ERRO NO LOGIN === */
+.login-error-message {
+    margin-top: 15px;
+    padding: 10px 14px;
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+    border-radius: 10px;
+    font-size: 0.95em;
+    font-weight: 500;
+    display: none;
+    align-items: center;
+    gap: 8px;
+    animation: slideDown 0.4s ease-out;
+}
+
+.login-error-message i {
+    font-size: 1.1em;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === FORMULÁRIO PRINCIPAL === */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #d4a373;
+    font-size: 2.5em;
+}
+
+.message {
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+    display: none;
+    animation: slide 0.5s ease-out;
+}
+
+.success { background: #d4edda; color: #155724; border: 2px solid #a3d9a3; }
+.error { background: #f8d7da; color: #721c24; border: 2px solid #f5a3a3; }
+
+.form-card {
+    background: #fefae0;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.form-header h2 {
+    color: #8b5a2b;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-row .input-group {
+    flex: 1;
+}
+
+.input-group.full { width: 100%; }
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #d4a373;
+    border-radius: 12px;
+    background: #fff8f0;
+    font-size: 1em;
+}
+
+.input-group textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+.phone-required {
+    display: none;
+    color: #d32f2f;
+    font-size: 0.85em;
+    margin-left: 45px;
+}
+
+.radio-group, .checkbox-group {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.checkbox-group label { cursor: pointer; }
+
+.submit-btn {
+    background: #8b5a2b;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    margin: 25px 0;
+    box-shadow: 0 4px 15px rgba(139, 90, 43, 0.3);
+}
+
+.submit-btn:hover {
+    background: #a57040;
+    transform: translateY(-2px);
+}
+
+.privacy-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.privacy-link a {
+    color: #8b5a2b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #e6b587;
+    font-size: 0.95em;
+}
+
+.github { color: #d4a373; margin-left: 5px; }
+.coffee-footer { margin-top: 15px; font-weight: bold; }
+
+/* === RÁDIOS E CHECKBOXES === */
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #8b5a2b;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 8px rgba(139, 90, 43, 0.4);
+}
+
+.radio-group label,
+.checkbox-group label {
+    color: #5d4037;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* === BOTÃO SAIR (CANTO DIREITO) === */
+#main-container > .container {
+    position: relative;
+    padding-top: 70px;
+    padding-right: 20px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #8b5a2b;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 0.95em;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out 0.3s forwards;
+}
+
+.back-btn:hover {
+    background: #a57040;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
+}
+
+.back-btn i {
+    font-size: 1.1em;
+}
+
+/* === BOTÃO ESCOLHER ARQUIVO (ÍCONE DENTRO!) === */
+.file {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.file input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.file-label {
+    background: #8b5a2b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px; /* ESPAÇO PERFEITO ENTRE ÍCONE E TEXTO */
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.file-label:hover {
+    background: #a57040;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 90, 43, 0.4);
+}
+
+.file-label i {
+    font-size: 1.1em;
+}
+
+.file::after {
+    content: attr(data-file-name);
+    color: #5d4037;
+    font-size: 0.95em;
+    font-style: italic;
+}
+
+/* === ANIMAÇÕES === */
+@keyframes steam {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(-15px) rotate(5deg); opacity: 0.7; }
+}
+
+@keyframes slide {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .form-row { flex-direction: column; }
+    .login-card, .form-card { padding: 25px; }
+    .back-btn { right: 10px; top: 10px; font-size: 0.9em; }
+}
+
+/* === PÁGINA DE PRIVACIDADE - MELHOR LEGIBILIDADE === */
+.privacy-card {
+    background: #fefae0;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.privacy-content p {
+    margin-bottom: 16px;
+    color: #3d2817 !important; /* MARROM ESCURO - ALTO CONTRASTE */
+    line-height: 1.7;
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.privacy-content strong {
+    color: #8b5a2b !important; /* CAFÉ FORTE */
+}
+
+.privacy-icon {
+    color: #8b5a2b;
+    margin-right: 8px;
+    font-size: 1.1em;
+}

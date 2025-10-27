@@ -426,3 +426,12 @@ input[type="checkbox"]:hover {
     margin-right: 8px;
     font-size: 1.1em;
 }
+
+.required {
+    display: block;
+    color: #d32f2f;
+    font-size: 0.85em;
+    margin-left: 45px;
+    margin-top: 4px;
+    font-weight: 500;
+}

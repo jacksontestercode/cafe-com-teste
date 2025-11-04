@@ -25,7 +25,7 @@ body {
     background: #fefae0;
     border-radius: 20px;
     padding: 40px 30px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
@@ -39,6 +39,16 @@ body {
     font-size: 1.4em;
     animation: steam 2.5s infinite;
 }
+
+.coffee-icon {
+    color: var(--coffee);
+    font-size: 1.4em;
+    margin-left: 10px;
+    animation: none;
+    vertical-align: middle;
+    transform: translateY(-9px);
+}
+
 
 .login-header p {
     color: #a0522d;
@@ -58,6 +68,7 @@ body {
     transform: translateY(-50%);
     color: #8b5a2b;
     font-size: 1.1em;
+    z-index: 2;
 }
 
 .input-group input {
@@ -129,8 +140,15 @@ body {
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* === FORMULÁRIO PRINCIPAL === */
@@ -160,14 +178,23 @@ body {
     animation: slide 0.5s ease-out;
 }
 
-.success { background: #d4edda; color: #155724; border: 2px solid #a3d9a3; }
-.error { background: #f8d7da; color: #721c24; border: 2px solid #f5a3a3; }
+.success {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #a3d9a3;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5a3a3;
+}
 
 .form-card {
     background: #fefae0;
     border-radius: 20px;
     padding: 35px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .form-header h2 {
@@ -186,7 +213,9 @@ body {
     flex: 1;
 }
 
-.input-group.full { width: 100%; }
+.input-group.full {
+    width: 100%;
+}
 
 .input-group input,
 .input-group select,
@@ -197,6 +226,19 @@ body {
     border-radius: 12px;
     background: #fff8f0;
     font-size: 1em;
+    color: #5d4037;
+    transition: all 0.3s;
+    line-height: 1.4;
+    /* Altura consistente */
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #8b5a2b;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(139, 90, 43, 0.15);
 }
 
 .input-group textarea {
@@ -211,7 +253,8 @@ body {
     margin-left: 45px;
 }
 
-.radio-group, .checkbox-group {
+.radio-group,
+.checkbox-group {
     margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +262,9 @@ body {
     align-items: center;
 }
 
-.checkbox-group label { cursor: pointer; }
+.checkbox-group label {
+    cursor: pointer;
+}
 
 .submit-btn {
     background: #8b5a2b;
@@ -258,8 +303,15 @@ body {
     font-size: 0.95em;
 }
 
-.github { color: #d4a373; margin-left: 5px; }
-.coffee-footer { margin-top: 15px; font-weight: bold; }
+.github {
+    color: #d4a373;
+    margin-left: 5px;
+}
+
+.coffee-footer {
+    margin-top: 15px;
+    font-weight: bold;
+}
 
 /* === RÁDIOS E CHECKBOXES === */
 input[type="radio"],
@@ -289,7 +341,7 @@ input[type="checkbox"]:hover {
 }
 
 /* === BOTÃO SAIR (CANTO DIREITO) === */
-#main-container > .container {
+#main-container>.container {
     position: relative;
     padding-top: 70px;
     padding-right: 20px;
@@ -355,7 +407,8 @@ input[type="checkbox"]:hover {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 12px; /* ESPAÇO PERFEITO ENTRE ÍCONE E TEXTO */
+    gap: 12px;
+    /* ESPAÇO PERFEITO ENTRE ÍCONE E TEXTO */
     box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -380,23 +433,52 @@ input[type="checkbox"]:hover {
 
 /* === ANIMAÇÕES === */
 @keyframes steam {
-    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    50% { transform: translateY(-15px) rotate(5deg); opacity: 0.7; }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+        opacity: 0.7;
+    }
 }
 
 @keyframes slide {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 600px) {
-    .form-row { flex-direction: column; }
-    .login-card, .form-card { padding: 25px; }
-    .back-btn { right: 10px; top: 10px; font-size: 0.9em; }
+    .form-row {
+        flex-direction: column;
+    }
+
+    .login-card,
+    .form-card {
+        padding: 25px;
+    }
+
+    .back-btn {
+        right: 10px;
+        top: 10px;
+        font-size: 0.9em;
+    }
 }
 
 /* === PÁGINA DE PRIVACIDADE - MELHOR LEGIBILIDADE === */
@@ -404,21 +486,23 @@ input[type="checkbox"]:hover {
     background: #fefae0;
     border-radius: 20px;
     padding: 35px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     margin: 20px auto;
     max-width: 700px;
 }
 
 .privacy-content p {
     margin-bottom: 16px;
-    color: #3d2817 !important; /* MARROM ESCURO - ALTO CONTRASTE */
+    color: #3d2817 !important;
+    /* MARROM ESCURO - ALTO CONTRASTE */
     line-height: 1.7;
     font-size: 1.05em;
     font-weight: 500;
 }
 
 .privacy-content strong {
-    color: #8b5a2b !important; /* CAFÉ FORTE */
+    color: #8b5a2b !important;
+    /* CAFÉ FORTE */
 }
 
 .privacy-icon {

@@ -30,6 +30,7 @@ loginForm.addEventListener('submit', function (e) {
     if (username !== VALID_USER || password !== VALID_PASS) return showLoginError("Usuário ou senha incorretos.");
 
     // SUCESSO: entra no sistema
+    alert("Bem-vindo, Jackson!");
     loginContainer.style.display = 'none';
     mainContainer.style.display = 'block';
 });
